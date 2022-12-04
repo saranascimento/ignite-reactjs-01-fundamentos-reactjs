@@ -1,57 +1,87 @@
-.commentForm {
-  width: 100%;
+.comment {
   margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--gray-600);
+  display: flex;
+  gap: 1rem;
 }
 
-.commentForm > strong {
-  line-height: 1.6;
-  color: var(--gray-100);
+.comment > img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
 }
 
-.commentForm textarea {
-  width: 100%;
-  background-color: var(--gray-900);
-  border: 0;
-  resize: none;
-  height: 6rem;
+.commentBox {
+  flex: 1;
+}
+
+.commentContent {
+  background: var(--gray-700);
+  border-radius: 8px;
   padding: 1rem;
-  border-radius: 8px;
-  color: var(--gray-100);
-  line-height: 1.4;
-  margin-top: 1rem;
 }
 
-.commentForm footer {
-  visibility: hidden;
-  max-height: 0;
+.commentContent header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.commentForm:focus-within footer {
-  visibility: visible;
-  max-height: none;
+.authorAndTime strong {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.6;
 }
 
-.commentForm button[type="submit"] {
-  padding: 1rem 1.5rem;
-  margin-top: 1rem;
-  border-radius: 8px;
+.authorAndTime time {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--gray-400);
+}
+
+.commentContent header button {
+  background: transparent;
   border: 0;
-  background-color: var(--green-500);
-  color: var(--white);
-  font-weight: bold;
+  color: var(--gray-400);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 2px;
+}
+
+.commentContent header button:hover {
+  color: var(--red-500);
+}
+
+.commentContent p {
+  margin-top: 1rem;
+  color: var(--gray-300);
+}
+
+.commentBox footer {
+  margin-top: 1rem;
+}
+
+.commentBox footer button {
+  background: transparent;
+  border: 0;
+  color: var(--gray-400);
   cursor: pointer;
 
-  transition: background-color 0.1s;
-  outline: 2px solid var(--green-500);
+  display: flex;
+  align-items: center;
+
+  border-radius: 2px;
 }
 
-.commentForm button[type="submit"]:hover {
-  background: var(--green-300);
-  outline-color: var(--green-300);
+.commentBox footer button:hover {
+  color: var(--green-300);
 }
 
-.commentList {
-  margin-top: 2rem;
+.commentBox footer button svg {
+  margin-right: 0.5rem;
+}
+
+.commentBox footer button span::before {
+  content: "\2022";
+  padding: 0 0.25rem;
 }
